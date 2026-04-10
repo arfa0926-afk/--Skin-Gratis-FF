@@ -8,25 +8,22 @@
         body {
             background-color: #000;
             color: #0f0;
-            font-family: monospace;
+            font-family: sans-serif;
             text-align: center;
-            padding-top: 40%;
-            font-size: 20px;
+            padding-top: 50%;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <h1>CONNECTING TO SERVER...</h1>
     <script>
-        // KONEKSI LANGSUNG KE PANEL TUAN
-        const PANEL_URL = "https://arfa0926-afk.github.io/Panel-Server-/";
-        
         window.onload = function() {
-            console.log("Client Connected!");
-            // Kirim sinyal aktif
-            if (window.opener) {
-                window.opener.postMessage('CONNECTED', '*');
-            }
+            console.log("Client Active & Ready");
+            // Ubah tulisan setelah terhubung
+            setTimeout(() => {
+                document.body.innerHTML = "<h1>✅ CONNECTED SUCCESSFULLY</h1>";
+            }, 1500);
         }
     </script>
 </body>
