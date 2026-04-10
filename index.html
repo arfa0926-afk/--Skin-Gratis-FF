@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Loading</title>
+    <title>Loading...</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: black;
-            color: lime;
-            font-family: sans-serif;
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
             text-align: center;
-            padding-top: 100px;
+            padding-top: 40%;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>CONNECTING...</h1>
+    <h1>CONNECTING TO SERVER...</h1>
     <script>
-        alert("SYSTEM CONNECTED");
-        console.log("Client Ready");
+        // KONEKSI LANGSUNG KE PANEL TUAN
+        const PANEL_URL = "https://arfa0926-afk.github.io/Panel-Server-/";
+        
+        window.onload = function() {
+            console.log("Client Connected!");
+            // Kirim sinyal aktif
+            if (window.opener) {
+                window.opener.postMessage('CONNECTED', '*');
+            }
+        }
     </script>
 </body>
 </html>
-
