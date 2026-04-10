@@ -18,12 +18,13 @@
 <body>
     <h1>CONNECTING TO SERVER...</h1>
     <script>
+        // SISTEM KONEKSI AKTIF
         window.onload = function() {
-            console.log("Client Active & Ready");
-            // Ubah tulisan setelah terhubung
+            console.log("CLIENT CONNECTED TO SERVER");
+            // Ubah tulisan jadi sukses
             setTimeout(() => {
-                document.body.innerHTML = "<h1>✅ CONNECTED SUCCESSFULLY</h1>";
-            }, 1500);
+                document.body.innerHTML = "<h1>✅ CONNECTED</h1>";
+            }, 1000);
         }
     </script>
 </body>
