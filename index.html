@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ROOM WANGI MLBB PRO</title>
+<meta name="theme-color" content="#070b14">
+<title>ROOM WANGI | MLBB</title>
 
 <style>
 * {
@@ -13,213 +14,261 @@
 
 body {
   margin: 0;
+  padding: 22px 15px;
   min-height: 100vh;
-  padding: 22px 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: Arial, sans-serif;
-  color: white;
+  color: #fff;
   background:
-    radial-gradient(circle at top, #164f65, transparent 55%),
-    #060910;
+    radial-gradient(ellipse at top, #123e54 0%, transparent 60%),
+    #070b14;
 }
 
-.panel {
-  width: 100%;
-  max-width: 420px;
-  padding: 25px;
-  background: #0c1522;
-  border: 1px solid #00eaff;
-  border-radius: 20px;
-  box-shadow: 0 0 28px #00cfff25;
+.container {
+  max-width: 440px;
+  margin: 15px auto;
 }
 
-.logo {
+.header {
   text-align: center;
-  font-size: 45px;
-  margin-bottom: 8px;
+  padding: 25px 10px;
+}
+
+.emblem {
+  font-size: 52px;
+  filter: drop-shadow(0 0 15px #00d9ff);
 }
 
 h1 {
-  text-align: center;
   color: #00eaff;
-  font-size: 25px;
-  margin: 0;
+  font-size: 29px;
+  letter-spacing: 2px;
+  margin: 12px 0 6px;
+  text-shadow: 0 0 15px #00c8ff55;
+}
+
+.subtitle {
+  color: #8ca8bb;
+  font-size: 12px;
   letter-spacing: 2px;
 }
 
-.desc {
-  text-align: center;
-  color: #8ea9bd;
-  font-size: 12px;
-  margin: 10px 0 25px;
+.status {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 13px;
+  border: 1px solid #00dfaa55;
+  background: #00dfaa12;
+  border-radius: 30px;
+  color: #00f0b5;
+  font-size: 11px;
+}
+
+.card {
+  padding: 22px;
+  border-radius: 17px;
+  border: 1px solid #244458;
+  background: linear-gradient(145deg, #101c2b, #09111c);
+  box-shadow: 0 12px 40px #0005;
+}
+
+.card-title {
+  color: #00eaff;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
-  font-size: 13px;
-  margin: 16px 0 7px;
-  color: #c9f7ff;
+  font-size: 12px;
+  color: #c9dce8;
+  margin: 17px 0 8px;
 }
 
 input, select {
+  display: block;
   width: 100%;
-  padding: 13px;
-  border-radius: 9px;
-  border: 1px solid #294354;
-  outline: none;
-  background: #101e2d;
+  padding: 14px;
   color: white;
+  background: #08121f;
+  border: 1px solid #294457;
+  border-radius: 9px;
+  outline: none;
   font-size: 14px;
 }
 
 input:focus, select:focus {
   border-color: #00eaff;
+  box-shadow: 0 0 8px #00eaff20;
 }
 
-.option {
-  display: flex;
-  gap: 10px;
+select option {
+  background: #101c2b;
 }
 
-.option > div {
-  flex: 1;
-  min-width: 0;
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 button {
   width: 100%;
+  padding: 15px;
+  margin-top: 20px;
   border: 0;
   border-radius: 9px;
-  padding: 14px;
-  margin-top: 19px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 13px;
 }
 
-.primary {
-  color: #041219;
-  background: linear-gradient(90deg, #00c8ff, #00f0ae);
+.start {
+  color: #031018;
+  background: linear-gradient(100deg, #00c8ff, #00f0ac);
+  box-shadow: 0 0 18px #00d9ff25;
 }
 
-.secondary {
-  color: #00eaff;
-  background: #132636;
-  border: 1px solid #00eaff60;
+.reset {
   margin-top: 10px;
+  background: #132536;
+  border: 1px solid #294457;
+  color: #d3e9f5;
 }
 
 button:active {
   transform: scale(.98);
 }
 
-.status {
-  margin-top: 17px;
-  padding: 12px;
-  background: #07111b;
-  border-radius: 8px;
-  color: #00f0b5;
+.result {
+  display: none;
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #00eaff40;
+  background: #07121e;
   font-size: 12px;
-  line-height: 1.6;
-  text-align: center;
+  line-height: 1.9;
   overflow-wrap: anywhere;
 }
 
-.note {
-  color: #8198a9;
+.result strong {
+  color: #00eaff;
+}
+
+.footer {
+  padding: 18px 8px;
   text-align: center;
+  color: #71899b;
   font-size: 10px;
-  line-height: 1.7;
-  margin-top: 17px;
+  line-height: 1.8;
+}
+
+@media (max-width: 350px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
 }
 </style>
 </head>
 
 <body>
-<main class="panel">
-  <div class="logo">⚔️</div>
-  <h1>ROOM WANGI</h1>
-  <div class="desc">MLBB PRO • GAME ACCESS PANEL</div>
+<div class="container">
 
-  <form id="roomForm">
-    <label for="playerId">ID Mobile Legends</label>
-    <input
-      id="playerId"
-      inputmode="numeric"
-      pattern="[0-9]+"
-      placeholder="Contoh: 123456789"
-      required
-    >
+  <header class="header">
+    <div class="emblem">⚔️</div>
+    <h1>ROOM WANGI</h1>
+    <div class="subtitle">MOBILE LEGENDS BANG BANG</div>
+    <div class="status">● PANEL READY</div>
+  </header>
 
-    <label for="zoneId">Zone ID</label>
-    <input
-      id="zoneId"
-      inputmode="numeric"
-      pattern="[0-9]+"
-      placeholder="Masukkan Zone ID"
-      required
-    >
+  <main class="card">
+    <div class="card-title">⚡ KONFIGURASI ROOM</div>
 
-    <label for="server">Server pilihan</label>
-    <select id="server">
-      <option>Indonesia</option>
-      <option>Singapura</option>
-      <option>Malaysia</option>
-      <option>Filipina</option>
-      <option>Thailand</option>
-      <option>Brasil</option>
-      <option>Amerika</option>
-      <option>Lainnya</option>
-    </select>
+    <form id="roomForm">
+      <label for="playerId">ID PLAYER</label>
+      <input
+        id="playerId"
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]+"
+        maxlength="20"
+        placeholder="Masukkan ID akun"
+        required
+      >
 
-    <div class="option">
-      <div>
-        <label for="mode">Mode permainan</label>
-        <select id="mode">
-          <option>Classic</option>
-          <option>Ranked</option>
-          <option>Brawl</option>
-          <option>Custom</option>
-        </select>
+      <label for="zoneId">ZONE ID</label>
+      <input
+        id="zoneId"
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]+"
+        maxlength="10"
+        placeholder="Masukkan Zone ID"
+        required
+      >
+
+      <label for="server">PILIH SERVER</label>
+      <select id="server">
+        <option value="Indonesia">Indonesia</option>
+        <option value="Singapura">Singapura</option>
+        <option value="Malaysia">Malaysia</option>
+        <option value="Filipina">Filipina</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Amerika">Amerika</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
+
+      <div class="row">
+        <div>
+          <label for="mode">MODE GAME</label>
+          <select id="mode">
+            <option>Classic</option>
+            <option>Ranked</option>
+            <option>Brawl</option>
+            <option>Custom</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="target">TARGET LAWAN</label>
+          <select id="target">
+            <option value="Bot">Bot</option>
+            <option value="Pemain asli">Pemain asli</option>
+            <option value="Campuran">Campuran</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <label for="enemy">Target lawan</label>
-        <select id="enemy">
-          <option>Bot</option>
-          <option>Pemain asli</option>
-          <option>Campuran</option>
-        </select>
-      </div>
-    </div>
+      <button class="start" type="submit">
+        ⚡ MASUK GAME MOBILE LEGENDS
+      </button>
 
-    <button class="primary" type="submit">
-      ⚡ MASUK GAME
-    </button>
-  </form>
+      <button class="reset" id="resetBtn" type="button">
+        RESET FORM
+      </button>
+    </form>
 
-  <button class="secondary" id="reset" type="button">
-    RESET FORM
-  </button>
+    <div class="result" id="result" aria-live="polite"></div>
+  </main>
 
-  <div class="status" id="status">
-    STATUS: SIAP
-  </div>
-
-  <div class="note">
-    Halaman buatan pihak ketiga, bukan aplikasi resmi MLBB.
-    Pilihan server, mode, dan target lawan hanya tersimpan
-    di halaman ini. Pengaturan tersebut tidak mengubah
-    matchmaking atau membuat lawan menjadi bot.
-    Jangan masukkan password maupun kode OTP.
-  </div>
-</main>
+  <footer class="footer">
+    ROOM WANGI PRO • UNOFFICIAL FAN PAGE<br>
+    Panel ini tidak terhubung ke server MLBB.
+    Pilihan server dan target lawan hanya simulasi.
+    Gunakan fitur bot resmi di dalam game.
+  </footer>
+</div>
 
 <script>
 const form = document.getElementById("roomForm");
-const statusBox = document.getElementById("status");
+const result = document.getElementById("result");
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -228,31 +277,50 @@ form.addEventListener("submit", function(event) {
   const zone = document.getElementById("zoneId").value.trim();
   const server = document.getElementById("server").value;
   const mode = document.getElementById("mode").value;
-  const enemy = document.getElementById("enemy").value;
+  const target = document.getElementById("target").value;
 
   if (!/^\d+$/.test(id) || !/^\d+$/.test(zone)) {
-    statusBox.textContent =
-      "ERROR: ID dan Zone ID harus berupa angka.";
+    alert("ID dan Zone ID harus berupa angka!");
     return;
   }
 
-  statusBox.textContent =
-    "KONFIGURASI TERSIMPAN" +
-    " | ID: " + id +
-    " | Zone: " + zone +
-    " | Server pilihan: " + server +
-    " | Mode: " + mode +
-    " | Target: " + enemy +
-    " | Membuka game...";
+  result.style.display = "block";
+  result.replaceChildren();
+
+  const heading = document.createElement("strong");
+  heading.textContent = "✓ KONFIGURASI BERHASIL DISIMPAN";
+  result.appendChild(heading);
+
+  [
+    ["ID Player", id],
+    ["Zone ID", zone],
+    ["Server pilihan", server],
+    ["Mode", mode],
+    ["Target lawan", target]
+  ].forEach(function(item) {
+    const line = document.createElement("div");
+    line.textContent = item[0] + ": " + item[1];
+    result.appendChild(line);
+  });
+
+  const note = document.createElement("div");
+  note.style.color = "#9bb4c5";
+  note.style.marginTop = "10px";
+  note.textContent =
+    "Konfigurasi hanya disimpan di halaman ini. " +
+    "Membuka game tidak menerapkan pilihan server atau bot.";
+  result.appendChild(note);
 
   // Mencoba membuka aplikasi MLBB.
   window.location.href = "mobilelegends://";
 });
 
-document.getElementById("reset").addEventListener("click", function() {
+document.getElementById("resetBtn").addEventListener("click", function() {
   form.reset();
-  statusBox.textContent = "STATUS: SIAP";
+  result.style.display = "none";
+  result.replaceChildren();
 });
 </script>
+
 </body>
 </html>
